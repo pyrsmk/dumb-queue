@@ -1,0 +1,21 @@
+{
+  "name": "dumb-queue",
+  "version": "1.0.0",
+  "description": "A simple queue that handles async functions with a wait time.",
+  "main": "src/queue.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pyrsmk/dumb-queue.git"
+  },
+  "keywords": [
+    "queue",
+    "async",
+    "rate",
+    "limit"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pyrsmk/dumb-queue/issues"
+  },
+  "homepage": "https://github.com/pyrsmk/dumb-queue#readme"
+}
