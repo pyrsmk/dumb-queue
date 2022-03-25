@@ -1,6 +1,6 @@
 module.exports = waitTime => {
   const queue = []
-  return callback => {
+  const obj = callback => {
     // Add the new callback.
     queue.push(async () => {
       await callback()
@@ -18,4 +18,19 @@ module.exports = waitTime => {
       queue[0]()
     }
   }
+  // Add a method to wait until the queue is empty.
+  obj.wait = () => {
+    return new Promise(resolve => {
+      const interval = setInterval(
+        () => {
+          if (queue.length == 0) {
+            clearInterval(interval)
+            resolve()
+          }
+        },
+        1
+      )
+    })
+  }
+  return obj
 }

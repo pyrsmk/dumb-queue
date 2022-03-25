@@ -27,6 +27,9 @@ queue(() => someAsyncSlowAction2())
 // You can, of course, use non-async functions with the help of `async` which will
 // always return a promise.
 queue(async () => someSyncSlowAction3())
+
+// Wait until the queue is empty.
+await queue.wait()
 ```
 
 Compatibility
