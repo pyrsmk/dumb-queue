@@ -19,14 +19,14 @@ Usage
 const queue = require('dumb-queue')(1000)
 
 // The callback must return a promise so`the queue know when the task has finished.
-queue(() => someAsyncSlowAction1())
+queue.add(() => someAsyncSlowAction1())
 // ...
 // Further in your code.
-queue(() => someAsyncSlowAction2())
+queue.add(() => someAsyncSlowAction2())
 // ...
 // You can, of course, use non-async functions with the help of `async` which will
 // always return a promise.
-queue(async () => someSyncSlowAction3())
+queue.add(async () => someSyncSlowAction3())
 
 // Wait until the queue is empty.
 await queue.wait()
